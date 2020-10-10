@@ -72,6 +72,7 @@ d3.json("electoral-boundary-dataset-original.json", function(sg) {
                                         	var returnColor;
                                         	if(d.properties.Name =="ALJUNIED"){returnColor ="1C82B5";}
                                         	else if(d.properties.Name =="SENGKANG"){returnColor ="1C82B5";}
+                                        	else if(d.properties.Name =="HOUGANG"){returnColor ="1C82B5";}
                                         	else {returnColor ="#9E2222";}
                                         	return returnColor;
                                         })
@@ -82,7 +83,6 @@ d3.json("electoral-boundary-dataset-original.json", function(sg) {
                                             drawTooltip(d);})
                                         .on('mouseout',mouseout);
 });
-
 
 
     
