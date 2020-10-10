@@ -54,6 +54,7 @@ function drawTooltip(d) {
 function mouseout() {
 	d3.select("#tooltip").classed("hidden", true);
 	d3.select(this).classed("highlight",false)
+     .style("fill-opacity","1");
 }
 
 //sg plan area 20170903.json electoral-boundary-dataset.json
@@ -70,25 +71,31 @@ d3.json("electoral-boundary-dataset-original.json", function(sg) {
                                         .style("stroke-width","0.3")
                                         .style("fill",function(d){
                                         	var returnColor;
+<<<<<<< HEAD
                                         	if(d.properties.Name =="ALJUNIED"){returnColor ="1C82B5";}
                                         	else if(d.properties.Name =="SENGKANG"){returnColor ="1C82B5";}
                                         	else if(d.properties.Name =="HOUGANG"){returnColor ="1C82B5";}
                                         	else {returnColor ="#9E2222";}
+=======
+                                        	if(d.properties.Name =="ALJUNIED"){returnColor ="4f558c";}
+                                        	else if(d.properties.Name =="SENGKANG"){returnColor ="4f558c";}
+                                        	else {returnColor ="9E2222";}
+>>>>>>> f0f4997c3d3fe955cb3c0b9e54d1a85db14581f9
                                         	return returnColor;
                                         })
                                         .classed("area",true)
                                         .on('mouseover', function(d) {
                                             d3.select(this)
                                             .classed("highlight",true)
+                                            .style("fill-opacity","0.75")
+                                            //.style("stroke","1c1d26")
+                                       		//.style("stroke-width","3")
                                             drawTooltip(d);})
-                                        .on('mouseout',mouseout);
+                                        .on('mouseout', mouseout)
 });
 
 
     
     </script>
-</body>
-    
-
-    
+</body>  
 </html>
